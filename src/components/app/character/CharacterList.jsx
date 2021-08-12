@@ -1,7 +1,19 @@
 import React from 'react';
+import { useCharacters } from '../../../state/CharacterProvider';
+import Character from './Character';
 
 const CharacterList = () => {
-  return <h1> Character List</h1>;
+  const characters = useCharacters();
+
+  const listItems = characters.map(char => {
+    return (
+      <li key={char.id}>
+        <Character name={char.name} image={char.image}/>
+      </li>
+    );
+  });
+  
+  return <ul> {listItems}</ul>;
 };
 
 export default CharacterList;
