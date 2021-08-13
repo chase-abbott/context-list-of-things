@@ -1,13 +1,17 @@
+/* eslint-disable max-len */
 import React from 'react';
-import { CharacterProvider } from '../../state/CharacterProvider';
+import { useThemes } from '../../state/CharacterProvider';
 import CharacterList from './character/CharacterList';
 import ThemeSelector from './ThemeSelector';
 
 export default function App() {
+  const  { currentTheme }  = useThemes();
+  console.log('from App.js', currentTheme);
+
   return (
-    <CharacterProvider>
+    <div style={{ backgroundColor: currentTheme.background, color: currentTheme.foreground }}>
       <ThemeSelector/>
       <CharacterList/>
-    </CharacterProvider>
+    </div>
   );
 }
