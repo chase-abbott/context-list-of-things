@@ -13,7 +13,7 @@ const CharacterList = () => {
     );
   });
   
-  return <ul> {listItems}</ul>;
+  return <ul style={{ listStyle: 'none' }}> {listItems}</ul>;
 };
 
 export default CharacterList;
