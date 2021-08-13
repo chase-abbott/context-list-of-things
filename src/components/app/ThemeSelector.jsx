@@ -6,11 +6,13 @@ const ThemeSelector = () => {
  
   return (
     <>
+      <label> Light Theme </label>
       <input
         type="radio"
         name="theme"
         value="light"
         onChange={handleThemeChange}/>
+      <label> Dark Theme</label>
       <input
         type="radio"
         name="theme"
